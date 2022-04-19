@@ -5,6 +5,7 @@ export const QueuePage = () => {
   const renderMiddleColumn = (show: any, hide: any) => {
     return (
       <>
+        <div>Queue Page</div>
         <button onClick={show}>show</button>
         <button onClick={hide}>hide</button>
       </>

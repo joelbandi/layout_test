@@ -3,8 +3,8 @@
 import { Switch, Route, useLocation } from "react-router-dom";
 import { Header } from "../Header";
 import { PlatformNav, PracticeSettings } from "../LeftColumn";
-import { QueuePage } from "../Pages/Queue";
-import { Patients } from "../Patients";
+import { QueuePage } from "../Pages/QueuePage";
+import { PatientsPage } from "../Pages/PatientsPage";
 import { Dashboard } from "../Dashboard";
 import { flex } from "../Styles";
 
@@ -25,7 +25,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/queue" component={QueuePage} />
-        <Route path="/patients" component={Patients} />
+        <Route path="/patients" component={PatientsPage} />
       </Switch>
     </div>
   </>
