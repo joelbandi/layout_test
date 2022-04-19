@@ -1,16 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
-import {
-  Switch,
-  Route,
-  useLocation
-} from "react-router-dom";
-import { Header } from "../Header"
-import { PlatformNav, PracticeSettings } from "../LeftColumn"
-import { Queue } from "../Queue"
-import { Patients } from "../Patients"
-import { Dashboard } from "../Dashboard"
-import { flex } from "../Styles"
+import { Switch, Route, useLocation } from "react-router-dom";
+import { Header } from "../Header";
+import { PlatformNav, PracticeSettings } from "../LeftColumn";
+import { QueuePage } from "../Pages/Queue";
+import { Patients } from "../Patients";
+import { Dashboard } from "../Dashboard";
+import { flex } from "../Styles";
 
 export const Main = () => {
   return (
@@ -18,8 +14,8 @@ export const Main = () => {
       <Route path="/practice-settings" component={Settings} />
       <Route path="/" component={App} />
     </Switch>
-  )
-}
+  );
+};
 
 const App = () => (
   <>
@@ -28,15 +24,15 @@ const App = () => (
       <PlatformNav />
       <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route path="/queue" component={Queue} />
+        <Route path="/queue" component={QueuePage} />
         <Route path="/patients" component={Patients} />
       </Switch>
     </div>
   </>
-)
+);
 
 const Settings = () => {
-  const loc = useLocation()
+  const loc = useLocation();
   return (
     <>
       <Header searchBar={false} />
@@ -45,5 +41,5 @@ const Settings = () => {
         <span>Practice Settings @ {loc.pathname}</span>
       </div>
     </>
-  )
-}
+  );
+};
